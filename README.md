@@ -1,3 +1,5 @@
+mvn -P gsp clean generate-resources
+
 # ディレクトリについての補足
 
 | ディレクトリ               | 補足                                                                                                                                                                             |
