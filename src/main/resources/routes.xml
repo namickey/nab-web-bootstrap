@@ -1,4 +1,4 @@
 <routes>
-    <root to="Sample#index"/>
+    <root to="Dog#index"/>
     <match path="/action/:controller/:action"/>
 </routes>
