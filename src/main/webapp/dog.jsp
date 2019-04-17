@@ -23,12 +23,14 @@
 <div class="container">
 <n:form>
 <div class="form-group row">
-    <label for="name" class="col-sm-2 col-form-label">Name</label>
+    <label for="form.name" class="col-sm-2 col-form-label">Name</label>
     <div class="col-sm-2">
-      <n:text name="name" cssClass="form-control"/>
+      <n:text name="form.name" cssClass="form-control"/>
+      <n:error name="form.name" />
     </div>
-    <n:button type="submit" uri="/action/dog/search" cssClass="btn btn-success">検索</n:button>
 </div>
+
+<n:button type="submit" uri="/action/dog/search" cssClass="btn btn-success mx-auto d-block">検索</n:button>
 
 
 <n:listSearchResult listSearchInfoName="form"
@@ -40,6 +42,7 @@
                       currentPageNumberCss="d-inline"
                       prevSubmitCss="d-inline"
                       nextSubmitCss="d-inline"
+                      usePageNumberSubmit="true"
                       >
 
     <jsp:attribute name="headerRowFragment">
