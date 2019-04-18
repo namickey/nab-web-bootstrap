@@ -62,7 +62,7 @@
             <td><n:write name="row.id" /></td>
             <td><n:write name="row.name" /></td>
             <td><n:write name="row.color" /></td>
-            <td><n:button uri="/action/dog/download" >download</n:button></td>
+            <td><n:button uri="/action/dog/download" cssClass="btn btn-success>download</n:button></td>
         </tr>
     </jsp:attribute>
 </n:listSearchResult>
