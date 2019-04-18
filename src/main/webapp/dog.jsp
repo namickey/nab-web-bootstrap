@@ -23,10 +23,10 @@
 <div class="container">
 <n:form>
 <div class="form-group row">
-    <label for="form.name" class="col-sm-2 col-form-label">Name</label>
+    <label for="form.name" class="col-sm-2 col-form-label">DogName</label>
     <div class="col-sm-2">
-      <n:text name="form.name" cssClass="form-control"/>
-      <n:error name="form.name" />
+      <n:text name="form.dogName" cssClass="form-control"/>
+      <n:error name="form.dogName" />
     </div>
 </div>
 
@@ -49,18 +49,20 @@
     <thead class="thead-dark">
         <tr>
             <th>num</th>
+            <th>id</th>
             <th>name</th>
-            <th>price</th>
-            <th>memo</th>
+            <th>color</th>
+            <th>download</th>
         </tr>
     </thead>
     </jsp:attribute>
     <jsp:attribute name="bodyRowFragment">
         <tr class="<n:write name='oddEvenCss' />">
             <td>[<n:write name="count" />]</td>
+            <td><n:write name="row.id" /></td>
             <td><n:write name="row.name" /></td>
-            <td><n:write name="row.price" /></td>
-            <td><n:write name="row.memo" /></td>
+            <td><n:write name="row.color" /></td>
+            <td><n:button uri="/action/dog/download" >download</n:button></td>
         </tr>
     </jsp:attribute>
 </n:listSearchResult>

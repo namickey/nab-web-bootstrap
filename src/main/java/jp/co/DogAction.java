@@ -1,5 +1,10 @@
 package jp.co;
 
+import nablarch.common.dao.DeferredEntityList;
+import nablarch.common.dao.UniversalDao;
+import nablarch.common.databind.ObjectMapper;
+import nablarch.common.databind.ObjectMapperFactory;
+import nablarch.common.web.download.FileResponse;
 import nablarch.common.web.interceptor.InjectForm;
 import nablarch.core.beans.BeanUtil;
 import nablarch.core.db.support.DbAccessSupport;
@@ -14,6 +19,10 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
+import java.io.IOException;
+import java.io.UncheckedIOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -24,13 +33,13 @@ public class DogAction extends DbAccessSupport {
 
     public HttpResponse index(HttpRequest request, ExecutionContext context) {
         DogForm form = new DogForm();
-        form.setName("foo");
+        form.setDogName("foo");
         context.setRequestScopedVar("form", form);
         return new HttpResponse("/dog.jsp");
     }
 
     @InjectForm(form = DogForm.class, prefix = "form")
-    @OnError(type = ApplicationException.class, path = "/dog.jsp")
+    @OnError(type = ApplicationException.class, path = "/WEB-INF/dog.jsp")
     public HttpResponse search(HttpRequest request, ExecutionContext context) {
 
         DogForm form = context.getRequestScopedVar("form");
@@ -52,12 +61,12 @@ public class DogAction extends DbAccessSupport {
         System.out.println(form.getMax());
 
         //client呼び出しサンプル
-        WebTarget target = ClientBuilder.newClient().target("http://localhost:5000").path("/");
-        for(Map.Entry<String, Object> e : BeanUtil.createMapAndCopy(form).entrySet()) {
-            target = target.queryParam(e.getKey(), e.getValue());
-        }
-        String result = target.request().accept(MediaType.APPLICATION_JSON_TYPE).get(String.class);
-        System.out.println("result:" + result);
+//        WebTarget target = ClientBuilder.newClient().target("http://localhost:5000").path("/");
+//        for(Map.Entry<String, Object> e : BeanUtil.createMapAndCopy(form).entrySet()) {
+//            target = target.queryParam(e.getKey(), e.getValue());
+//        }
+//        String result = target.request().accept(MediaType.APPLICATION_JSON_TYPE).get(String.class);
+//        System.out.println("result:" + result);
         //GET /?hasPrevPage=true&pageCount=0&resultCount=0&pageNumber=3&prevPageNumber=2&hasNextPage=false&max=20&startPosition=41&firstPageNumber=1&searchConditionProps=%5BLjava.lang.String%3B%40e5aef6c&endPosition=0&sortId=&name=foo&nextPageNumber=4&lastPageNumber=0&maxResultCount=200
 
 
@@ -70,9 +79,40 @@ public class DogAction extends DbAccessSupport {
 
     private DogDto createDog(){
         DogDto dto = new DogDto();
+        dto.setId("1");
         dto.setName("one");
-        dto.setPrice("1");
-        dto.setMemo("waon.");
+        dto.setColor("white");
         return dto;
+    }
+
+    /**
+     * CSVダウンロード
+     */
+    @InjectForm(form = DogForm.class, prefix = "form")
+    @OnError(type = ApplicationException.class, path = "/WEB-INF/dog.jsp")
+    public HttpResponse download(HttpRequest request, ExecutionContext context) {
+
+
+        final Path path;
+        try {
+            path = Files.createTempFile(null, null);
+            try (DeferredEntityList<Dog> searchList = (DeferredEntityList<Dog>) UniversalDao
+                    .defer().findAll(Dog.class);
+                 ObjectMapper<DogDto> mapper = ObjectMapperFactory.create(DogDto.class,
+                         Files.newOutputStream(path))) {
+
+                for (Dog dog : searchList) {
+                    DogDto dto = BeanUtil.createAndCopy(DogDto.class, dog);
+                    mapper.write(dto);
+                }
+            }
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+
+        FileResponse response = new FileResponse(path.toFile(), true);
+        response.setContentType("text/csv; charset=Shift_JIS");
+        response.setContentDisposition("dog.csv");
+        return response;
     }
 }

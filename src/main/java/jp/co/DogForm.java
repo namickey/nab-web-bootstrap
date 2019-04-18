@@ -11,7 +11,10 @@ import nablarch.core.validation.ee.Required;
 public class DogForm extends ListSearchInfo {
 
     @Required
-    private String name;
+    private String dogName;
+
+    /** downloadキー */
+    private String key;
 
 
     @Digits(integer = 2)

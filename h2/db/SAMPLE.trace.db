@@ -1,0 +1,20 @@
+04-11 22:39:54 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "USER_SESSION" が見つかりません
+Table "USER_SESSION" not found; SQL statement:
+UPDATE USER_SESSION SET SESSION_OBJECT=?,EXPIRATION_DATETIME=? WHERE SESSION_ID = ? [42102-176]
+04-11 22:40:12 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "USER_SESSION" が見つかりません
+Table "USER_SESSION" not found; SQL statement:
+UPDATE USER_SESSION SET SESSION_OBJECT=?,EXPIRATION_DATETIME=? WHERE SESSION_ID = ? [42102-176]
+04-11 22:41:05 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "USER_SESSION" が見つかりません
+Table "USER_SESSION" not found; SQL statement:
+UPDATE USER_SESSION SET SESSION_OBJECT=?,EXPIRATION_DATETIME=? WHERE SESSION_ID = ? [42102-176]
+04-11 22:44:30 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "USER_SESSION" が見つかりません
+Table "USER_SESSION" not found; SQL statement:
+UPDATE USER_SESSION SET SESSION_OBJECT=?,EXPIRATION_DATETIME=? WHERE SESSION_ID = ? [42102-176]
+04-18 22:54:55 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "DOG_DTO" が見つかりません
+Table "DOG_DTO" not found; SQL statement:
+SELECT COLOR,ID,NAME FROM DOG_DTO [42102-176]
