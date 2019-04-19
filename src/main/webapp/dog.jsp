@@ -9,6 +9,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>dog</title>
+  <style>
+    .nablarch_pageNumberSubmitWrapper{display:inline!important}
+  </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
@@ -39,9 +42,11 @@
                       resultSetCss="table"
                       resultCountCss="d-inline"
                       pagingCss="text-right"
+                      useCurrentPageNumber="false"
                       currentPageNumberCss="d-inline"
                       prevSubmitCss="d-inline"
                       nextSubmitCss="d-inline"
+                      pageNumberSubmitCss="d-inline"
                       usePageNumberSubmit="true"
                       >
 
@@ -62,7 +67,7 @@
             <td><n:write name="row.id" /></td>
             <td><n:write name="row.name" /></td>
             <td><n:write name="row.color" /></td>
-            <td><n:button uri="/action/dog/download" cssClass="btn btn-success>download</n:button></td>
+            <td><n:button uri="/action/dog/download" cssClass="btn btn-success">download</n:button></td>
         </tr>
     </jsp:attribute>
 </n:listSearchResult>
