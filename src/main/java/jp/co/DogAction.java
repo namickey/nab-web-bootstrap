@@ -6,6 +6,7 @@ import nablarch.common.databind.ObjectMapper;
 import nablarch.common.databind.ObjectMapperFactory;
 import nablarch.common.web.download.FileResponse;
 import nablarch.common.web.interceptor.InjectForm;
+import nablarch.common.web.session.SessionUtil;
 import nablarch.core.beans.BeanUtil;
 import nablarch.core.db.support.DbAccessSupport;
 import nablarch.core.message.ApplicationException;
@@ -33,26 +34,46 @@ public class DogAction extends DbAccessSupport {
 
     public HttpResponse index(HttpRequest request, ExecutionContext context) {
         DogForm form = new DogForm();
-        form.setDogName("foo");
+        form.setDogName("ワン");
         context.setRequestScopedVar("form", form);
-        return new HttpResponse("/dog.jsp");
+        return new HttpResponse("/top.jsp");
     }
 
     @InjectForm(form = DogForm.class, prefix = "form")
-    @OnError(type = ApplicationException.class, path = "/dog.jsp")
-    public HttpResponse search(HttpRequest request, ExecutionContext context) {
+    @OnError(type = ApplicationException.class, path = "/top.jsp")
+    public HttpResponse find(HttpRequest request, ExecutionContext context) {
 
         DogForm form = context.getRequestScopedVar("form");
         ValidatorUtil.validate(form);
 
+        System.out.println(form.getDogName());
+
+        context.setRequestScopedVar("form", form);
+        SessionUtil.put(context, "name", form.getDogName(), "hidden");
+        SessionUtil.put(context, "form", form, "hidden");
+
+        return new HttpResponse("/dogFind.jsp");
+    }
+
+    public HttpResponse some(HttpRequest request, ExecutionContext context) {
+        return new HttpResponse("/dogFind.jsp");
+    }
+
+    public HttpResponse entry(HttpRequest request, ExecutionContext context) {
+        return new HttpResponse("/dogEntry.jsp");
+    }
+
+    @OnError(type = ApplicationException.class, path = "/dog.jsp")
+    public HttpResponse search(HttpRequest request, ExecutionContext context) {
+
+        DogForm form = SessionUtil.get(context, "form");
         List<DogDto> searchResult = callApi(form);
 
         int dummyTotalCountFromApiResult = 100;
         form.setResultCount(dummyTotalCountFromApiResult);
 
-        context.setRequestScopedVar("form", form);
         context.setRequestScopedVar("searchResult", searchResult);
-        return new HttpResponse("/dog.jsp");
+        return new HttpResponse("/dogSearch.jsp");
     }
 
     private List<DogDto> callApi(DogForm form){

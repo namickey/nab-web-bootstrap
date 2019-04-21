@@ -17,42 +17,18 @@
 </head>
 <body style="padding-top:60px;">
 
-
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="/">DogPay</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link active" href="/">Features</a>
-      <a class="nav-item nav-link active" href="/">Pricing</a>
-      <a class="nav-item nav-link active" href="/">Disabled</a>
-    </div>
-  </div>
-</nav>
+<%@ include file="/WEB-INF/header.jsp"%>
 
 <div class="container-fluid p-0">
     <div class="row flex-nowrap">
-        <div class="col-3 p-4 border-right" style="min-width:230px;max-width:230px;">
-        <n:form cssClass="">
-            <div class="form-group">
-                <label for="form.name">DogName</label>
-                <div class="form-inline flex-nowrap">
-                    <n:text name="form.dogName" cssClass="form-control" size="10"/>
-                    <n:button type="submit" uri="/action/dog/search" cssClass="btn btn-success">検索</n:button>
-                </div>
-                <n:error name="form.dogName" />
-            </div>
-        </n:form>
-        </div>
+
+        <%@ include file="/WEB-INF/sidebar.jsp"%>
+
         <main class="col-9 p-4">
+            <%@ include file="/WEB-INF/dogNav.jsp"%>
+
             <n:form>
-
-
-
-
+            <n:hiddenStore name="nablarch_hiddenStore" />
 
             <n:listSearchResult listSearchInfoName="form"
                                   searchUri="/action/dog/search"
