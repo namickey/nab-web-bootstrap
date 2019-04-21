@@ -39,7 +39,7 @@ public class DogAction extends DbAccessSupport {
     }
 
     @InjectForm(form = DogForm.class, prefix = "form")
-    @OnError(type = ApplicationException.class, path = "/WEB-INF/dog.jsp")
+    @OnError(type = ApplicationException.class, path = "/dog.jsp")
     public HttpResponse search(HttpRequest request, ExecutionContext context) {
 
         DogForm form = context.getRequestScopedVar("form");

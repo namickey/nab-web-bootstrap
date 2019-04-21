@@ -15,131 +15,43 @@
     .nablarch_pageNumberSubmitWrapper{display:inline!important}
   </style>
 </head>
-<body data-spy="scroll" data-target="#navbar1" data-offset="160">
+<body style="padding-top:60px;">
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary" id="navbar1">
-    <div class="container">
-        <div class="row">
-            <a class="navbar-brand mr-1 mb-1 mt-0" href="../">Bootstrap 4</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse justify-content-center" id="collapsingNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="themesDd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Themes
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="themesDd">
-                            <a class="dropdown-item px-2 " href="../tequila">Tequila</a>
-                            <a class="dropdown-item px-2" href="https://themestr.app" rel="nofollow" target="_new" title="Bootstrap theme builder">Build your own...</a>
-                        </div>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="layoutDd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Layouts
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="layoutDd">
-                            <a class="dropdown-item px-2" href="./">Default</a>
-                            <a class="dropdown-item px-2" href="./template2.html">Layout 2</a>
-                            <a class="dropdown-item px-2" href="./template3.html">Layout 3</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#buttons">Buttons</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#navs">Navs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#cards">Cards</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#modals">Modals</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#typography">Typography</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#forms">Forms</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#grid">Grid</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse justify-content-center" id="collapsingNavbar">
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="themesDd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Themes
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="themesDd">
-                                    <a class="dropdown-item px-2 " href="../tequila">Tequila</a>
-                                    <a class="dropdown-item px-2" href="https://themestr.app" rel="nofollow" target="_new" title="Bootstrap theme builder">Build your own...</a>
-                                </div>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="layoutDd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Layouts
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="layoutDd">
-                                    <a class="dropdown-item px-2" href="./">Default</a>
-                                    <a class="dropdown-item px-2" href="./template2.html">Layout 2</a>
-                                    <a class="dropdown-item px-2" href="./template3.html">Layout 3</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#buttons">Buttons</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#navs">Navs</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#cards">Cards</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#modals">Modals</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#typography">Typography</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#forms">Forms</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#grid">Grid</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">DogPay</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="/">Features</a>
+      <a class="nav-item nav-link active" href="/">Pricing</a>
+      <a class="nav-item nav-link active" href="/">Disabled</a>
     </div>
+  </div>
 </nav>
 
-
-<div class="container p-0">
-    <div class="row">
-        <main class="col p-4">
-            <n:form>
-            <div class="form-group row">
-                <label for="form.name" class="col-sm-2 col-form-label">DogName</label>
-                <div class="col-sm-2">
-                  <n:text name="form.dogName" cssClass="form-control"/>
-                  <n:error name="form.dogName" />
+<div class="container-fluid p-0">
+    <div class="row flex-nowrap">
+        <div class="col-3 p-4 border-right" style="min-width:230px;max-width:230px;">
+        <n:form cssClass="">
+            <div class="form-group">
+                <label for="form.name">DogName</label>
+                <div class="form-inline flex-nowrap">
+                    <n:text name="form.dogName" cssClass="form-control" size="10"/>
+                    <n:button type="submit" uri="/action/dog/search" cssClass="btn btn-success">検索</n:button>
                 </div>
+                <n:error name="form.dogName" />
             </div>
+        </n:form>
+        </div>
+        <main class="col-9 p-4">
+            <n:form>
 
-            <n:button type="submit" uri="/action/dog/search" cssClass="btn btn-success mx-auto d-block">検索</n:button>
+
+
 
 
             <n:listSearchResult listSearchInfoName="form"
