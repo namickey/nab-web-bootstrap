@@ -44,17 +44,7 @@
                     <label for="inputAddress2">Address 2</label>
                     <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                   </div>
-                    <div class="form-group col-md-6">
-                      <label for="inputCity">City</label>
-                      <input type="text" class="form-control" id="inputCity">
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label for="inputState">State</label>
-                      <select id="inputState" class="form-control">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                      </select>
-                    </div>
+
                   <div class="form-group">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -63,7 +53,8 @@
                       </label>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-success">Entry</button>
+                  <button type="submit" class="btn btn-secondary">戻る</button>
+                  <button type="submit" class="btn btn-info">登録</button>
                 </form>
 
         </main>

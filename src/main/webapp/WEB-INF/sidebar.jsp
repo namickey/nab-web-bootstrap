@@ -14,13 +14,13 @@
                             <label for="form.name">Dog名</label>
                             <div class="form-inline flex-nowrap">
                                 <n:text name="form.dogName" cssClass="form-control" size="10"/>
-                                <n:button type="submit" uri="/action/dog/find" cssClass="btn btn-success">検索</n:button>
+                                <n:button type="submit" uri="/action/dog/find" cssClass="btn btn-info">検索</n:button>
                             </div>
                             <n:error name="form.dogName" />
                         </div>
                     </n:form>
                     <n:form>
-                        <n:button type="submit" uri="/" cssClass="btn btn-success">Dog名寄せ</n:button>
+                        <n:button type="submit" uri="/" cssClass="btn btn-info">Dog名寄せ</n:button>
                     </n:form>
                 </div>
             </div>

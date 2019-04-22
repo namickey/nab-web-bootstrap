@@ -8,10 +8,10 @@
         <h3>
             Dog名 : <n:write name="name"/>ちゃん
         </h3>
-        <n:button type="submit" uri="/action/dog/search" cssClass="btn btn-success">Dogコメント参照</n:button>
-        <n:button type="submit" uri="/action/dog/entry" cssClass="btn btn-success">Dogコメント登録</n:button>
-        <n:button type="submit" uri="/action/dog/some" cssClass="btn btn-success">Dog体調管理</n:button>
-        <n:button type="submit" uri="/action/dog/some" cssClass="btn btn-success">Dogエサ</n:button>
-        <n:button type="submit" uri="/action/dog/some" cssClass="btn btn-success">Dog管理</n:button>
+        <n:button type="submit" uri="/action/dog/search" cssClass="btn btn-primary">Dogコメント参照</n:button>
+        <n:button type="submit" uri="/action/dog/entry" cssClass="btn btn-primary">Dogコメント登録</n:button>
+        <n:button type="submit" uri="/action/dog/some" cssClass="btn btn-primary">Dog体調管理</n:button>
+        <n:button type="submit" uri="/action/dog/some" cssClass="btn btn-primary">Dogエサ</n:button>
+        <n:button type="submit" uri="/action/dog/some" cssClass="btn btn-primary">Dog管理</n:button>
     </n:form>
 </div>
