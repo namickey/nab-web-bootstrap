@@ -63,6 +63,18 @@ public class DogAction extends DbAccessSupport {
         return new HttpResponse("/dogEntry.jsp");
     }
 
+    @InjectForm(form = DogEntryForm.class, prefix = "form")
+    @OnError(type=ApplicationException.class, path = "/dogEntry.jsp")
+    public HttpResponse entryDog(HttpRequest request, ExecutionContext context) {
+        DogEntryForm form = context.getRequestScopedVar("form");
+        System.out.println(form.getEmail());
+
+        DogForm form2 = new DogForm();
+        form2.setDogName((String)SessionUtil.get(context, "name"));
+        context.setRequestScopedVar("form", form2);
+        return new HttpResponse("forward:///action/dog/search");
+    }
+
     @OnError(type = ApplicationException.class, path = "/dog.jsp")
     public HttpResponse search(HttpRequest request, ExecutionContext context) {
 

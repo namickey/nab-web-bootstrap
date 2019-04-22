@@ -27,14 +27,21 @@
         <main class="col-9 p-4">
             <%@ include file="/WEB-INF/dogNav.jsp"%>
 
-                <form>
+                <n:form>
+                    <n:hiddenStore name="nablarch_hiddenStore" />
+                    <h3>
+                        Dog名 : <n:write name="name"/>ちゃん
+                    </h3>
+                    <n:errors/>
+
                     <div class="form-group col-md-6">
                       <label for="inputEmail4">Email</label>
-                      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                      <n:text name="form.email" cssClass="form-control" id="inputEmail4" placeholder="Email"/>
+                      <n:error name="form.email" />
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputPassword4">Password</label>
-                      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                      <n:text name="form.password" cssClass="form-control" id="inputPassword4" placeholder="Password"/>
                     </div>
                   <div class="form-group col-md-6">
                     <label for="inputAddress">Address</label>
@@ -53,9 +60,9 @@
                       </label>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-secondary">戻る</button>
-                  <button type="submit" class="btn btn-info">登録</button>
-                </form>
+                  <n:button type="submit" uri="/action/dog/some" cssClass="btn btn-secondary">戻る</n:button>
+                  <n:button type="submit" uri="/action/dog/entryDog" cssClass="btn btn-info">登録</n:button>
+                </n:form>
 
         </main>
     </div>
