@@ -7,20 +7,14 @@
   <!-- テーブル定義 -->
   <import file="nablarch/schema-config.xml" />
 
-  <!-- 精査に使用する文字集合定義 -->
-  <import file="nablarch/core/validation/charset-definition.xml"/>
-
-  <!-- DomainManager 実装クラス設定 -->
-  <component name="domainManager" class="jp.co.domain.SampleDomainManager"/>
-
-  <!-- BeanValidation実装クラス -->
-  <component name="validationStrategy" class="nablarch.common.web.validator.BeanValidationStrategy" />
-
   <!-- 環境設定ファイル -->
   <config-file file="common.config" />
   <config-file file="env.config" />
 
   <!-- Nablarch共通機能 -->
+
+  <!-- Nablarchバリデーション -->
+  <import file="validation.xml"/>
   <!-- コード機能 -->
   <import file="nablarch/common/code.xml"/>
   <!-- 自動採番型を持たないRDBMSで、ユニバーサルDAOを使用するための設定 -->
@@ -146,6 +140,9 @@
         <component-ref name="dbStore" />
         <!-- パッケージマッピング-->
         <component-ref name="packageMapping"/>
+        <!-- ドメインバリデーション -->
+        <component-ref name="validationManager" />
+        <component-ref name="domainValidator" />
       </list>
     </property>
   </component>

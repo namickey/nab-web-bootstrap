@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- バリデーション機能の設定 -->
+<component-configuration
+        xmlns="http://tis.co.jp/nablarch/component-configuration" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://tis.co.jp/nablarch/component-configuration https://nablarch.github.io/schema/component-configuration.xsd">
+
+  <import file="nablarch/core/validation/charset-definition.xml"/>
+
+  <component name="domainValidationHelper" class="nablarch.core.validation.domain.DomainValidationHelper">
+    <property name="domainAnnotation" value="${nablarch.domainValidationHelper.domainAnnotation}" />
+  </component>
+
+  <!-- バリデータの設定 -->
+  <component name="requiredValidator" class="nablarch.core.validation.validator.RequiredValidator">
+    <property name="messageId" value="${nablarch.requiredValidator.messageId}"/>
+  </component>
+  <component name="numberRangeValidator" class="nablarch.core.validation.validator.NumberRangeValidator">
+    <property name="maxMessageId" value="${nablarch.numberRangeValidator.maxMessageId}"/>
+    <property name="maxAndMinMessageId" value="${nablarch.numberRangeValidator.maxAndMinMessageId}"/>
+    <property name="minMessageId" value="${nablarch.numberRangeValidator.minMessageId}"/>
+  </component>
+  <component name="decimalRangeValidator" class="nablarch.core.validation.validator.DecimalRangeValidator">
+    <property name="maxMessageId" value="${nablarch.decimalRangeValidator.maxMessageId}"/>
+    <property name="maxAndMinMessageId" value="${nablarch.decimalRangeValidator.maxAndMinMessageId}"/>
+    <property name="minMessageId" value="${nablarch.decimalRangeValidator.minMessageId}"/>
+  </component>
+  <component name="lengthValidator" class="nablarch.core.validation.validator.LengthValidator">
+    <property name="maxMessageId" value="${nablarch.lengthValidator.maxMessageId}"/>
+    <property name="maxAndMinMessageId" value="${nablarch.lengthValidator.maxAndMinMessageId}"/>
+    <property name="fixLengthMessageId" value="${nablarch.lengthValidator.fixLengthMessageId}"/>
+  </component>
+  <component name="codeValueValidator" class="nablarch.common.code.validator.CodeValueValidator">
+    <property name="messageId" value="${nablarch.codeValueValidator.messageId}"/>
+  </component>
+  <component name="systemCharValidator" class="nablarch.core.validation.validator.unicode.SystemCharValidator">
+    <property name="messageId" value="${nablarch.systemCharValidator.messageId}"/>
+    <property name="defaultCharsetDef" ref="システム許容文字"/>
+  </component>
+  <component name="domainValidator" class="nablarch.core.validation.domain.DomainValidator">
+    <property name="domainValidationHelper" ref="domainValidationHelper"/>
+    <property name="validators" >
+      <list>
+        <component-ref name="requiredValidator" />
+        <component-ref name="numberRangeValidator" />
+        <component-ref name="decimalRangeValidator" />
+        <component-ref name="lengthValidator" />
+        <component-ref name="codeValueValidator" />
+        <component-ref name="systemCharValidator" />
+      </list>
+    </property>
+  </component>
+
+  <!-- バリデーションコンポーネントの設定 -->
+  <component name="validationManager" class="nablarch.core.validation.ValidationManager">
+    <!-- コンバータ -->
+    <property name="convertors">
+      <list>
+        <component class="nablarch.core.validation.convertor.StringConvertor">
+          <property name="conversionFailedMessageId" value="${nablarch.stringConvertor.conversionFailedMessageId}"/>
+          <property name="allowNullValue" value="${nablarch.validationManager.convertorAllowNullValue}"/>
+          <property name="extendedStringConvertors">
+            <list>
+              <component class="nablarch.common.date.YYYYMMDDConvertor">
+                <property name="parseFailedMessageId" value="${nablarch.yyyymmddConvertor.parseFailedMessageId}"/>
+              </component>
+            </list>
+          </property>
+        </component>
+        <component class="nablarch.core.validation.convertor.StringArrayConvertor">
+        </component>
+        <component class="nablarch.core.validation.convertor.IntegerConvertor">
+          <property name="invalidDigitsIntegerMessageId" value="${nablarch.integerConvertor.invalidDigitsIntegerMessageId}"/>
+          <property name="multiInputMessageId" value="${nablarch.integerConvertor.multiInputMessageId}"/>
+          <property name="allowNullValue" value="${nablarch.validationManager.convertorAllowNullValue}"/>
+        </component>
+        <component class="nablarch.core.validation.convertor.LongConvertor">
+          <property name="invalidDigitsIntegerMessageId" value="${nablarch.longConvertor.invalidDigitsIntegerMessageId}"/>
+          <property name="multiInputMessageId" value="${nablarch.longConvertor.multiInputMessageId}"/>
+          <property name="allowNullValue" value="${nablarch.validationManager.convertorAllowNullValue}"/>
+        </component>
+        <component class="nablarch.core.validation.convertor.BigDecimalConvertor">
+          <property name="invalidDigitsIntegerMessageId" value="${nablarch.bigDecimalConvertor.invalidDigitsIntegerMessageId}"/>
+          <property name="invalidDigitsFractionMessageId" value="${nablarch.bigDecimalConvertor.invalidDigitsFractionMessageId}"/>
+          <property name="multiInputMessageId" value="${nablarch.bigDecimalConvertor.multiInputMessageId}"/>
+          <property name="allowNullValue" value="${nablarch.validationManager.convertorAllowNullValue}"/>
+        </component>
+        <component class="nablarch.core.validation.convertor.BooleanConvertor">
+          <property name="conversionFailedMessageId" value="${nablarch.booleanConvertor.conversionFailedMessageId}"/>
+          <property name="allowNullValue" value="${nablarch.validationManager.convertorAllowNullValue}"/>
+        </component>
+      </list>
+    </property>
+    <!-- バリデータ -->
+    <property name="validators">
+      <list>
+        <component-ref name="domainValidator" />
+        <component-ref name="requiredValidator" />
+        <component-ref name="numberRangeValidator" />
+        <component-ref name="decimalRangeValidator" />
+        <component-ref name="lengthValidator" />
+        <component-ref name="codeValueValidator" />
+        <component-ref name="systemCharValidator" />
+      </list>
+    </property>
+    <property name="formDefinitionCache" ref="formDefinitionCache"/>
+    <property name="domainValidationHelper" ref="domainValidationHelper" />
+    <!-- サイズキーの設定が正しくなかった場合に表示されるメッセージ -->
+    <property name="invalidSizeKeyMessageId" value="${nablarch.validationManager.invalidSizeKeyMessageId}"/>
+  </component>
+
+  <!-- バリデーション情報のキャッシュ -->
+  <component name="formDefinitionCache" class="nablarch.core.cache.BasicStaticDataCache">
+    <property name="loader">
+      <component class="nablarch.core.validation.FormValidationDefinitionLoader"/>
+    </property>
+  </component>
+
+</component-configuration>
