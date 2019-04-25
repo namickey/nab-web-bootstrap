@@ -143,6 +143,7 @@
         <!-- ドメインバリデーション -->
         <component-ref name="validationManager" />
         <component-ref name="domainValidator" />
+        <component-ref name="formDefinitionCache" />
       </list>
     </property>
   </component>

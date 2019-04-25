@@ -1,31 +1,61 @@
 package jp.co;
 
-import lombok.Data;
-import nablarch.core.validation.ee.Required;
-
-import javax.validation.constraints.AssertTrue;
 import java.io.Serializable;
+import java.util.Map;
 
-@Data
 public class DogEntryForm implements Serializable {
 
-    @Required
     private String email;
-
     private String password;
-
     private String inputAddress;
-
     private String inputAddress2;
-
     private String gridCheck;
 
-    //@AssertTrue(message = "{nablarch.core.validation.ee.Digits.message}")
-    @AssertTrue(message = "emailとパスワードは同じ値を入力してください。") //メッセージIDでも動く。
-    private boolean isValidEmailPassword() {
-        if (email == null) {
-            return true;
-        }
-        return email.equals(password);
+    public DogEntryForm(Map<String, Object> params){
+        email = (String)params.get("email");
+        password = (String)params.get("password");
+        inputAddress = (String)params.get("inputAddress");
+        inputAddress2 = (String)params.get("inputAddress2");
+        gridCheck = (String)params.get("gridCheck");
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getInputAddress() {
+        return inputAddress;
+    }
+
+    public void setInputAddress(String inputAddress) {
+        this.inputAddress = inputAddress;
+    }
+
+    public String getInputAddress2() {
+        return inputAddress2;
+    }
+
+    public void setInputAddress2(String inputAddress2) {
+        this.inputAddress2 = inputAddress2;
+    }
+
+    public String getGridCheck() {
+        return gridCheck;
+    }
+
+    public void setGridCheck(String gridCheck) {
+        this.gridCheck = gridCheck;
     }
 }

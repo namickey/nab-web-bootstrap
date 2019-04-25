@@ -36,12 +36,12 @@
 
                     <div class="form-group col-md-6">
                       <label for="inputEmail4">Email</label>
-                      <n:text name="form.email" cssClass="form-control" id="inputEmail4" placeholder="Email"/>
-                      <n:error name="form.email" />
+                      <n:text name="email" cssClass="form-control" id="inputEmail4" placeholder="Email"/>
+                      <n:error name="email" />
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputPassword4">Password</label>
-                      <n:text name="form.password" cssClass="form-control" id="inputPassword4" placeholder="Password"/>
+                      <n:text name="password" cssClass="form-control" id="inputPassword4" placeholder="Password"/>
                     </div>
                   <div class="form-group col-md-6">
                     <label for="inputAddress">Address</label>

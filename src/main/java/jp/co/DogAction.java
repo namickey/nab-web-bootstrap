@@ -44,7 +44,6 @@ public class DogAction extends DbAccessSupport {
     public HttpResponse find(HttpRequest request, ExecutionContext context) {
 
         DogForm form = context.getRequestScopedVar("form");
-        ValidatorUtil.validate(form);
 
         System.out.println(form.getDogName());
 
@@ -63,7 +62,7 @@ public class DogAction extends DbAccessSupport {
         return new HttpResponse("/dogEntry.jsp");
     }
 
-    @InjectForm(form = DogEntryForm.class, prefix = "form")
+    @InjectForm(form = DogEntryForm.class, prefix = "form", validate = "validate")
     @OnError(type=ApplicationException.class, path = "/dogEntry.jsp")
     public HttpResponse entryDog(HttpRequest request, ExecutionContext context) {
         DogEntryForm form = context.getRequestScopedVar("form");
