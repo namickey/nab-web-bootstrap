@@ -1,4 +1,4 @@
 <routes>
-    <root to="Dog#index"/>
+    <root to="dog.Login#index"/>
     <match path="/action/:controller/:action"/>
 </routes>

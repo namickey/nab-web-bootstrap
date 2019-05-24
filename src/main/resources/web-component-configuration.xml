@@ -109,6 +109,8 @@
 
         <component-ref name="sessionStoreHandler" />
 
+        <component class="jp.co.handler.LoginCheckHandler" />
+
         <component class="nablarch.fw.web.handler.NormalizationHandler" />
 
         <component class="nablarch.fw.web.handler.ForwardingHandler"/>

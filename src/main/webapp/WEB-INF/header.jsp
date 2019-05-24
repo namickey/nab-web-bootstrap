@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="/">DogPay</a>
+  <a class="navbar-brand" href="/action/dog/top">DogPay</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -17,8 +17,8 @@
       -->
     </div>
     <div class="navbar-nav">
-        <span class="navbar-text">わん 太郎</span>
-        <a class="nav-item nav-link active" href="/">Logout</a>
+        <span class="navbar-text"><n:write name="name"/></span>
+        <a class="nav-item nav-link active" href="/action/dog/login/logout">Logout</a>
     </div>
   </div>
 </nav>

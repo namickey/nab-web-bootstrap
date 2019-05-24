@@ -10,29 +10,35 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/theme.min.css">
-  <title>dog</title>
+  <title>login</title>
   <style>
     .nablarch_pageNumberSubmitWrapper{display:inline!important}
   </style>
 </head>
 <body style="padding-top:60px;">
 
-<%@ include file="/WEB-INF/header.jsp"%>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/action/dog/top">DogPay</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav mr-auto">
+    </div>
+  </div>
+</nav>
 
-<div class="container-fluid p-0">
+<div class="container">
     <div class="row flex-nowrap">
 
-        <%@ include file="/WEB-INF/sidebar.jsp"%>
+        <main>
+            login
 
-        <main class="col-9 p-4">
-
-                <div class="alert alert-primary" role="alert">
-                  <h4 class="alert-heading">Well done!</h4>
-                  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-                  <hr>
-                  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-                </div>
-
+            <n:form>
+                <n:text name="id" cssClass="form-control"/>
+                <n:password name="password" cssClass="form-control"/>
+                <n:button type="submit" uri="/action/dog/login/login" cssClass="btn btn-info">ログイン</n:button>
+            </n:form>
         </main>
     </div>
 </div>
