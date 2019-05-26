@@ -108,3 +108,49 @@ CREATE TABLE DOG (
   COIN INTEGER,
   PRIMARY KEY (ID)
 );
+create table group_id(
+  group_id varchar(10),
+  primary key (group_id)
+);
+create table system_account(
+  user_id varchar(10),
+  user_lock char(1),
+  from_date TIMESTAMP,
+  to_date TIMESTAMP,
+  PRIMARY KEY (user_id)
+);
+create table group_system_account(
+  group_id varchar(10),
+  user_id varchar(10),
+  from_date TIMESTAMP,
+  to_date TIMESTAMP,
+  PRIMARY KEY (group_id, user_id, from_date)
+);
+create table check(
+  check_id(10),
+  PRIMARY KEY (check_id)
+);
+create table check_request(
+  check_id(10),
+  request_id varchar(10),
+  PRIMARY KEY (check_id, request_id)
+);
+create table request(
+  request_id varchar(10),
+  PRIMARY KEY (request_id)
+);
+create table group_check(
+  group_id varchar(10),
+  check_id(10),
+  PRIMARY KEY (group_id, check_id)
+);
+create table group_check(
+  group_id varchar(10),
+  check_id(10),
+  PRIMARY KEY (group_id, check_id)
+);
+create table system_account_check(
+  user_id varchar(10),
+  check_id(10),
+  PRIMARY KEY (group_id, check_id)
+);
