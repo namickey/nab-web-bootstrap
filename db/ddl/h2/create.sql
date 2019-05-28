@@ -117,6 +117,7 @@ create table system_account(
   user_lock char(1),
   from_date TIMESTAMP,
   to_date TIMESTAMP,
+  user_name varchar(20),
   PRIMARY KEY (user_id)
 );
 create table group_system_account(
@@ -126,31 +127,26 @@ create table group_system_account(
   to_date TIMESTAMP,
   PRIMARY KEY (group_id, user_id, from_date)
 );
-create table check(
-  check_id(10),
-  PRIMARY KEY (check_id)
+create table permission(
+  permission_id varchar(10),
+  PRIMARY KEY (permission_id)
 );
-create table check_request(
-  check_id(10),
+create table permission_request(
+  permission_id varchar(10),
   request_id varchar(10),
-  PRIMARY KEY (check_id, request_id)
+  PRIMARY KEY (permission_id, request_id)
 );
 create table request(
   request_id varchar(10),
   PRIMARY KEY (request_id)
 );
-create table group_check(
+create table group_permission(
   group_id varchar(10),
-  check_id(10),
-  PRIMARY KEY (group_id, check_id)
+  permission_id varchar(10),
+  PRIMARY KEY (group_id, permission_id)
 );
-create table group_check(
-  group_id varchar(10),
-  check_id(10),
-  PRIMARY KEY (group_id, check_id)
-);
-create table system_account_check(
+create table system_account_permission(
   user_id varchar(10),
-  check_id(10),
-  PRIMARY KEY (group_id, check_id)
+  permission_id varchar(10),
+  PRIMARY KEY (user_id, permission_id)
 );

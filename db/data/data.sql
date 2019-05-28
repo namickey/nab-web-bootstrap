@@ -15,5 +15,8 @@ INSERT INTO DOG VALUES('4', 'one4', 'white');
 INSERT INTO DOG VALUES('5', 'one5', 'white');
 INSERT INTO DOG VALUES('6', 'one6', 'white');
 
+insert into system_account values('1', '0', '2019-05-25', '2019-05-25', 'なぶ　太郎');
+insert into system_account values('2', '0', '2019-05-25', '2019-05-25', 'なぶ　次郎');
+insert into system_account values('3', '0', '2019-05-25', '2019-05-25', 'なぶ　三郎');
 
 commit;

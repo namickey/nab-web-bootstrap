@@ -18,3 +18,373 @@ UPDATE USER_SESSION SET SESSION_OBJECT=?,EXPIRATION_DATETIME=? WHERE SESSION_ID 
 org.h2.jdbc.JdbcSQLException: テーブル "DOG_DTO" が見つかりません
 Table "DOG_DTO" not found; SQL statement:
 SELECT COLOR,ID,NAME FROM DOG_DTO [42102-176]
+05-28 20:53:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: 不明なデータ型: "("
+Unknown data type: "("; SQL statement:
+create table permission(
+  permission_id(10),
+  PRIMARY KEY (permission_id)
+) [50004-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:178)
+	at org.h2.message.DbException.get(DbException.java:154)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:3963)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:3826)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:5723)
+	at org.h2.command.Parser.parseCreate(Parser.java:4122)
+	at org.h2.command.Parser.parsePrepared(Parser.java:351)
+	at org.h2.command.Parser.parse(Parser.java:306)
+	at org.h2.command.Parser.parse(Parser.java:278)
+	at org.h2.command.Parser.prepareCommand(Parser.java:243)
+	at org.h2.engine.Session.prepareLocal(Session.java:442)
+	at org.h2.engine.Session.prepareCommand(Session.java:384)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1188)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:172)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:160)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1391)
+	at org.h2.server.web.WebApp.query(WebApp.java:1064)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1026)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1013)
+	at org.h2.server.web.WebThread.process(WebThread.java:168)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:748)
+05-28 20:53:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: 不明なデータ型: "("
+Unknown data type: "("; SQL statement:
+create table permission_request(
+  permission_id(10),
+  request_id varchar(10),
+  PRIMARY KEY (permission_id, request_id)
+) [50004-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:178)
+	at org.h2.message.DbException.get(DbException.java:154)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:3963)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:3826)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:5723)
+	at org.h2.command.Parser.parseCreate(Parser.java:4122)
+	at org.h2.command.Parser.parsePrepared(Parser.java:351)
+	at org.h2.command.Parser.parse(Parser.java:306)
+	at org.h2.command.Parser.parse(Parser.java:278)
+	at org.h2.command.Parser.prepareCommand(Parser.java:243)
+	at org.h2.engine.Session.prepareLocal(Session.java:442)
+	at org.h2.engine.Session.prepareCommand(Session.java:384)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1188)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:172)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:160)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1391)
+	at org.h2.server.web.WebApp.query(WebApp.java:1064)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1026)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1013)
+	at org.h2.server.web.WebThread.process(WebThread.java:168)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:748)
+05-28 20:53:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: 不明なデータ型: "("
+Unknown data type: "("; SQL statement:
+create table group_permission(
+  group_id varchar(10),
+  permission_id(10),
+  PRIMARY KEY (group_id, check_id)
+) [50004-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:178)
+	at org.h2.message.DbException.get(DbException.java:154)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:3963)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:3826)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:5723)
+	at org.h2.command.Parser.parseCreate(Parser.java:4122)
+	at org.h2.command.Parser.parsePrepared(Parser.java:351)
+	at org.h2.command.Parser.parse(Parser.java:306)
+	at org.h2.command.Parser.parse(Parser.java:278)
+	at org.h2.command.Parser.prepareCommand(Parser.java:243)
+	at org.h2.engine.Session.prepareLocal(Session.java:442)
+	at org.h2.engine.Session.prepareCommand(Session.java:384)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1188)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:172)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:160)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1391)
+	at org.h2.server.web.WebApp.query(WebApp.java:1064)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1026)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1013)
+	at org.h2.server.web.WebThread.process(WebThread.java:168)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:748)
+05-28 20:53:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: 不明なデータ型: "("
+Unknown data type: "("; SQL statement:
+create table system_account_permission(
+  user_id varchar(10),
+  permission_id(10),
+  PRIMARY KEY (group_id, permission_id)
+) [50004-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:178)
+	at org.h2.message.DbException.get(DbException.java:154)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:3963)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:3826)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:5723)
+	at org.h2.command.Parser.parseCreate(Parser.java:4122)
+	at org.h2.command.Parser.parsePrepared(Parser.java:351)
+	at org.h2.command.Parser.parse(Parser.java:306)
+	at org.h2.command.Parser.parse(Parser.java:278)
+	at org.h2.command.Parser.prepareCommand(Parser.java:243)
+	at org.h2.engine.Session.prepareLocal(Session.java:442)
+	at org.h2.engine.Session.prepareCommand(Session.java:384)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1188)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:172)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:160)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1391)
+	at org.h2.server.web.WebApp.query(WebApp.java:1064)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1026)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1013)
+	at org.h2.server.web.WebThread.process(WebThread.java:168)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:748)
+05-28 20:54:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "GROUP_ID" はすでに存在します
+Table "GROUP_ID" already exists; SQL statement:
+create table group_id(
+  group_id varchar(10),
+  primary key (group_id)
+) [42101-176]
+05-28 20:54:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "SYSTEM_ACCOUNT" はすでに存在します
+Table "SYSTEM_ACCOUNT" already exists; SQL statement:
+create table system_account(
+  user_id varchar(10),
+  user_lock char(1),
+  from_date TIMESTAMP,
+  to_date TIMESTAMP,
+  user_name varchar(20),
+  PRIMARY KEY (user_id)
+) [42101-176]
+05-28 20:54:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "GROUP_SYSTEM_ACCOUNT" はすでに存在します
+Table "GROUP_SYSTEM_ACCOUNT" already exists; SQL statement:
+create table group_system_account(
+  group_id varchar(10),
+  user_id varchar(10),
+  from_date TIMESTAMP,
+  to_date TIMESTAMP,
+  PRIMARY KEY (group_id, user_id, from_date)
+) [42101-176]
+05-28 20:54:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "REQUEST" はすでに存在します
+Table "REQUEST" already exists; SQL statement:
+create table request(
+  request_id varchar(10),
+  PRIMARY KEY (request_id)
+) [42101-176]
+05-28 20:54:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: 列 "CHECK_ID" が見つかりません
+Column "CHECK_ID" not found; SQL statement:
+create table group_permission(
+  group_id varchar(10),
+  permission_id varchar(10),
+  PRIMARY KEY (group_id, check_id)
+) [42122-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:178)
+	at org.h2.message.DbException.get(DbException.java:154)
+	at org.h2.table.Table.getColumn(Table.java:637)
+	at org.h2.table.IndexColumn.mapColumns(IndexColumn.java:75)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:108)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:73)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:170)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:254)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:186)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:160)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1391)
+	at org.h2.server.web.WebApp.query(WebApp.java:1064)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1026)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1013)
+	at org.h2.server.web.WebThread.process(WebThread.java:168)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:748)
+05-28 20:54:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: 列 "GROUP_ID" が見つかりません
+Column "GROUP_ID" not found; SQL statement:
+create table system_account_permission(
+  user_id varchar(10),
+  permission_id varchar(10),
+  PRIMARY KEY (group_id, permission_id)
+) [42122-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:178)
+	at org.h2.message.DbException.get(DbException.java:154)
+	at org.h2.table.Table.getColumn(Table.java:637)
+	at org.h2.table.IndexColumn.mapColumns(IndexColumn.java:75)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:108)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:73)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:170)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:254)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:186)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:160)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1391)
+	at org.h2.server.web.WebApp.query(WebApp.java:1064)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1026)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1013)
+	at org.h2.server.web.WebThread.process(WebThread.java:168)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:748)
+05-28 20:54:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "GROUP_ID" はすでに存在します
+Table "GROUP_ID" already exists; SQL statement:
+create table group_id(
+  group_id varchar(10),
+  primary key (group_id)
+) [42101-176]
+05-28 20:54:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "SYSTEM_ACCOUNT" はすでに存在します
+Table "SYSTEM_ACCOUNT" already exists; SQL statement:
+create table system_account(
+  user_id varchar(10),
+  user_lock char(1),
+  from_date TIMESTAMP,
+  to_date TIMESTAMP,
+  user_name varchar(20),
+  PRIMARY KEY (user_id)
+) [42101-176]
+05-28 20:54:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "GROUP_SYSTEM_ACCOUNT" はすでに存在します
+Table "GROUP_SYSTEM_ACCOUNT" already exists; SQL statement:
+create table group_system_account(
+  group_id varchar(10),
+  user_id varchar(10),
+  from_date TIMESTAMP,
+  to_date TIMESTAMP,
+  PRIMARY KEY (group_id, user_id, from_date)
+) [42101-176]
+05-28 20:54:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "PERMISSION" はすでに存在します
+Table "PERMISSION" already exists; SQL statement:
+create table permission(
+  permission_id varchar(10),
+  PRIMARY KEY (permission_id)
+) [42101-176]
+05-28 20:54:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "PERMISSION_REQUEST" はすでに存在します
+Table "PERMISSION_REQUEST" already exists; SQL statement:
+create table permission_request(
+  permission_id varchar(10),
+  request_id varchar(10),
+  PRIMARY KEY (permission_id, request_id)
+) [42101-176]
+05-28 20:54:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "REQUEST" はすでに存在します
+Table "REQUEST" already exists; SQL statement:
+create table request(
+  request_id varchar(10),
+  PRIMARY KEY (request_id)
+) [42101-176]
+05-28 20:54:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: 列 "GROUP_ID" が見つかりません
+Column "GROUP_ID" not found; SQL statement:
+create table system_account_permission(
+  user_id varchar(10),
+  permission_id varchar(10),
+  PRIMARY KEY (group_id, permission_id)
+) [42122-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:178)
+	at org.h2.message.DbException.get(DbException.java:154)
+	at org.h2.table.Table.getColumn(Table.java:637)
+	at org.h2.table.IndexColumn.mapColumns(IndexColumn.java:75)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:108)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:73)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:170)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:254)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:186)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:160)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1391)
+	at org.h2.server.web.WebApp.query(WebApp.java:1064)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1026)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1013)
+	at org.h2.server.web.WebThread.process(WebThread.java:168)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:748)
+05-28 21:33:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: "TIMESTAMP" 定数 "2019/05/25 00:00:00" を解析できません
+Cannot parse "TIMESTAMP" constant "2019/05/25 00:00:00"; SQL statement:
+insert into system_account values('1', '0', '2019/05/25 00:00:00', '2019/05/25 00:00:00', 'なぶ　太郎') -- ('1', '0', '2019/05/25 00:00:00', '2019/05/25 00:00:00', STRINGDECODE('\u306a\u3076\u3000\u592a\u90ce')) [22007-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:88)
+	at org.h2.value.Value.convertTo(Value.java:862)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:254)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:186)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:160)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1391)
+	at org.h2.server.web.WebApp.query(WebApp.java:1064)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1026)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1013)
+	at org.h2.server.web.WebThread.process(WebThread.java:168)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalArgumentException: 2019/05/25 00:00:00
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:273)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:106)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:86)
+	... 15 more
+05-28 21:34:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: "TIMESTAMP" 定数 "2019/05/25 00:00:00.000" を解析できません
+Cannot parse "TIMESTAMP" constant "2019/05/25 00:00:00.000"; SQL statement:
+insert into system_account values('1', '0', '2019/05/25 00:00:00.000', '2019/05/25 00:00:00.000', 'なぶ　太郎') -- ('1', '0', '2019/05/25 00:00:00.000', '2019/05/25 00:00:00.000', STRINGDECODE('\u306a\u3076\u3000\u592a\u90ce')) [22007-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:88)
+	at org.h2.value.Value.convertTo(Value.java:862)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:254)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:186)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:160)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1391)
+	at org.h2.server.web.WebApp.query(WebApp.java:1064)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1026)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1013)
+	at org.h2.server.web.WebThread.process(WebThread.java:168)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalArgumentException: 2019/05/25 00:00:00.000
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:273)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:106)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:86)
+	... 15 more
+05-28 21:34:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: "TIMESTAMP" 定数 "2019/05/25" を解析できません
+Cannot parse "TIMESTAMP" constant "2019/05/25"; SQL statement:
+insert into system_account values('1', '0', '2019/05/25', '2019/05/25', 'なぶ　太郎') -- ('1', '0', '2019/05/25', '2019/05/25', STRINGDECODE('\u306a\u3076\u3000\u592a\u90ce')) [22007-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:88)
+	at org.h2.value.Value.convertTo(Value.java:862)
+	at org.h2.table.Column.convert(Column.java:151)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:254)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:186)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:160)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1391)
+	at org.h2.server.web.WebApp.query(WebApp.java:1064)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1026)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1013)
+	at org.h2.server.web.WebThread.process(WebThread.java:168)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalArgumentException: 2019/05/25
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:273)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:106)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:86)
+	... 15 more
