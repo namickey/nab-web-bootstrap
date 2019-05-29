@@ -9,6 +9,6 @@ public class TopAction extends DbAccessSupport {
 
     public HttpResponse index(HttpRequest request, ExecutionContext context) {
         System.out.println("top index");
-        return new HttpResponse("/top.jsp");
+        return new HttpResponse("/WEB-INF/top.jsp");
     }
 }

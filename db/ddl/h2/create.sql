@@ -112,12 +112,18 @@ create table group_id(
   group_id varchar(10),
   primary key (group_id)
 );
+create table user_account(
+  user_id varchar(10),
+  login_id varchar(10),
+  pass varchar(100),
+  user_name varchar(20),
+  PRIMARY KEY (user_id)
+);
 create table system_account(
   user_id varchar(10),
   user_lock char(1),
   from_date TIMESTAMP,
   to_date TIMESTAMP,
-  user_name varchar(20),
   PRIMARY KEY (user_id)
 );
 create table group_system_account(

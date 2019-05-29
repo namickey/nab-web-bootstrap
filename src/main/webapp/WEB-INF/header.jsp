@@ -9,15 +9,16 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav mr-auto">
+
+      <a class="nav-item nav-link active" href="/action/dog/user">ユーザ管理</a>
       <!--
-      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link active" href="/">Features</a>
       <a class="nav-item nav-link active" href="/">Pricing</a>
       <a class="nav-item nav-link active" href="/">Disabled</a>
       -->
     </div>
     <div class="navbar-nav">
-        <span class="navbar-text"><n:write name="name"/></span>
+        <span class="navbar-text pr-1"><n:write name="userContext.loginTime"/></span>
+        <span class="navbar-text"><n:write name="userContext.name"/></span>
         <a class="nav-item nav-link active" href="/action/dog/login/logout">Logout</a>
     </div>
   </div>
