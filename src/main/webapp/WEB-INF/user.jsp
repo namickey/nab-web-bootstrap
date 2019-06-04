@@ -39,9 +39,9 @@
             <n:form>
                 <n:errors/>
                 id
-                <n:text name="id" cssClass="form-control"/>
+                <n:text name="form.id" cssClass="form-control"/>
                 userName
-                <n:text name="userName" cssClass="form-control"/>
+                <n:text name="form.userName" cssClass="form-control"/>
                 <n:button type="submit" uri="/action/dog/user/search" cssClass="btn btn-info">検索</n:button>
 
                 <n:listSearchResult listSearchInfoName="form"

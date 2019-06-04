@@ -22,7 +22,7 @@ public class UserForm extends ListSearchInfo {
     }
 
     @PropertyName("ページ番号")
-    @NumberRange(max = 10, min = 1)
+    @NumberRange(max = 20, min = 1)
     @Digits(integer = 2)
     @Override
     public void setPageNumber(Integer pageNumber) {

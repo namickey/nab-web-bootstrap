@@ -36,7 +36,7 @@
 
             <n:form>
                 <n:errors/>
-                <n:text name="id" cssClass="form-control"/>
+                <n:text name="id" cssClass="form-control" value="1"/>
                 <n:password name="pass" cssClass="form-control"/>
                 <n:button type="submit" uri="/action/dog/login/login" cssClass="btn btn-info">ログイン</n:button>
             </n:form>

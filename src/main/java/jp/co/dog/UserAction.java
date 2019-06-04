@@ -16,7 +16,7 @@ public class UserAction extends DbAccessSupport {
 
     public HttpResponse search(HttpRequest request, ExecutionContext context) {
         ValidationContext<UserForm> validationContext =
-                ValidationUtil.validateAndConvertRequest(UserForm.class, request, "validate");
+                ValidationUtil.validateAndConvertRequest("form", UserForm.class, request, "validate");
         validationContext.abortIfInvalid();
         UserForm form = validationContext.createObject();
         if (form.getPageNumber() == null) {
