@@ -5379,32 +5379,32 @@
 
   <tag-file>
     <name>listSearchResult</name>
-    <path>/META-INF/tags/listSearchResult.tag</path>
+    <path>/WEB-INF/tags/listSearchResult.tag</path>
   </tag-file>
 
   <tag-file>
     <name>listSearchPaging</name>
-    <path>/META-INF/tags/listSearchPaging.tag</path>
+    <path>/WEB-INF/tags/listSearchPaging.tag</path>
   </tag-file>
 
   <tag-file>
     <name>listSearchSubmit</name>
-    <path>/META-INF/tags/listSearchSubmit.tag</path>
+    <path>/WEB-INF/tags/listSearchSubmit.tag</path>
   </tag-file>
 
   <tag-file>
     <name>listSearchSortSubmit</name>
-    <path>/META-INF/tags/listSearchSortSubmit.tag</path>
+    <path>/WEB-INF/tags/listSearchSortSubmit.tag</path>
   </tag-file>
 
   <tag-file>
     <name>listSearchParams</name>
-    <path>/META-INF/tags/listSearchParams.tag</path>
+    <path>/WEB-INF/tags/listSearchParams.tag</path>
   </tag-file>
   
   <tag-file>
     <name>table</name>
-    <path>/META-INF/tags/table.tag</path>
+    <path>/WEB-INF/tags/table.tag</path>
   </tag-file>
 
   <function>

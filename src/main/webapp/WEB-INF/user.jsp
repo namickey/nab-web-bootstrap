@@ -56,6 +56,10 @@
                                       nextSubmitCss="d-inline"
                                       pageNumberSubmitCss="d-inline"
                                       usePageNumberSubmit="true"
+                                      useFirstSubmit="true"
+                                      firstSubmitCss="d-inline"
+                                      useLastSubmit="true"
+                                      lastSubmitCss="d-inline"
                                       >
 
                     <jsp:attribute name="headerRowFragment">

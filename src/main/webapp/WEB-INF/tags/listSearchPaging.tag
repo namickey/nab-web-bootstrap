@@ -141,7 +141,19 @@
         <%--  ページ番号(1 2 3 ...n) --%>
         <c:if test="${usePageNumberSubmit && listSearchInfo.pageCount != 1}">
             <div class="<n:write name="pageNumberSubmitWrapperCss" withHtmlFormat="false" />">
-                <c:forEach begin="1" end="${listSearchInfo.pageCount}" varStatus="status">
+                <c:if test="${listSearchInfo.pageNumber > 4}">
+                    <n:set var="startNum" value="${listSearchInfo.pageNumber - 4}" scope="page" />
+                </c:if>
+                <c:if test="${listSearchInfo.pageNumber <= 4}">
+                    <n:set var="startNum" value="1" scope="page" />
+                </c:if>
+                <c:if test="${listSearchInfo.pageCount - listSearchInfo.pageNumber > 4}">
+                    <n:set var="endNum" value="${listSearchInfo.pageNumber + 4}" scope="page" />
+                </c:if>
+                <c:if test="${listSearchInfo.pageCount - listSearchInfo.pageNumber <= 4}">
+                    <n:set var="endNum" value="${listSearchInfo.pageCount}" scope="page" />
+                </c:if>
+                <c:forEach begin="${startNum}" end="${endNum}" varStatus="status">
                     <n:set var="pageNumber" value="${status.index}" scope="page" />
                     <n:listSearchSubmit tag="${pageNumberSubmitTag}"
                                         type="${pageNumberSubmitType}"
