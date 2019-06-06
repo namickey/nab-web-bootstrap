@@ -11,7 +11,10 @@
   <config-file file="common.config" />
   <config-file file="env.config" />
 
-  <!-- Nablarch共通機能 -->
+  <!-- 認可 -->
+  <import file="permission.xml"/>
+
+  <import file="nablarch/core/date.xml"/>
 
   <!-- Nablarchバリデーション -->
   <import file="validation.xml"/>
@@ -90,6 +93,17 @@
   <!-- TODO:使用するDBに合わせてダイアレクトを設定すること -->
   <component name="dialect" class="nablarch.core.db.dialect.H2Dialect" />
 
+  <!-- 認証ハンドラー -->
+  <component name="loginCheckHandler" class="jp.co.handler.LoginCheckHandler">
+    <property name="ignoreRequestIds">
+      <list>
+        <value>/action/dog/login/login</value>
+      </list>
+    </property>
+  </component>
+
+  <!-- スレッドコンテキストハンドラー -->
+  <import file="nablarch/webui/threadcontext-for-webui.xml" />
 
   <!-- ハンドラキュー構成 -->
   <component name="webFrontController"
@@ -109,7 +123,10 @@
 
         <component-ref name="sessionStoreHandler" />
 
-        <component class="jp.co.handler.LoginCheckHandler" />
+        <!-- 認証ハンドラー -->
+        <component-ref name="loginCheckHandler" />
+        <!-- 認可 -->
+        <component-ref name="permissionCheckHandler" />
 
         <component class="nablarch.fw.web.handler.NormalizationHandler" />
 
@@ -146,6 +163,11 @@
         <component-ref name="validationManager" />
         <component-ref name="domainValidator" />
         <component-ref name="formDefinitionCache" />
+        <!-- 認可 -->
+        <component-ref name="permissionFactory"/>
+        <!-- 業務日付 -->
+        <component-ref name="businessDateProvider"/>
+
       </list>
     </property>
   </component>
