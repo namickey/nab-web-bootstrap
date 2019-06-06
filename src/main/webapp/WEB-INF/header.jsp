@@ -11,10 +11,10 @@
     <div class="navbar-nav mr-auto">
 
       <a class="nav-item nav-link active" href="/action/dog/user">ユーザ管理</a>
-      <!--
-      <a class="nav-item nav-link active" href="/">Pricing</a>
-      <a class="nav-item nav-link active" href="/">Disabled</a>
-      -->
+      <a class="nav-item nav-link active" href="/action/dog/link1">リンク1</a>
+      <a class="nav-item nav-link active" href="/action/dog/link2">リンク2</a>
+      <a class="nav-item nav-link active" href="/action/dog/link3">リンク3</a>
+
     </div>
     <div class="navbar-nav">
         <span class="navbar-text pr-1"><n:write name="userContext.loginTime"/></span>

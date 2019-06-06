@@ -310,6 +310,15 @@
     </dependency>
 
     <dependency>
+      <groupId>com.nablarch.framework</groupId>
+      <artifactId>nablarch-common-auth</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.nablarch.framework</groupId>
+      <artifactId>nablarch-common-auth-jdbc</artifactId>
+    </dependency>
+
+    <dependency>
       <groupId>javax.servlet.jsp</groupId>
       <artifactId>javax.servlet.jsp-api</artifactId>
       <version>2.3.1</version>

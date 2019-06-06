@@ -8,6 +8,8 @@ public class UserContext implements Serializable {
 
     private String loginTime;
 
+    private String userId;
+
     public String getName() {
         return name;
     }
@@ -22,5 +24,13 @@ public class UserContext implements Serializable {
 
     public void setLoginTime(String loginTime) {
         this.loginTime = loginTime;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }
